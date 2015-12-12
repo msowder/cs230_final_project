@@ -1,0 +1,17 @@
+/* FILENAME: Recipe.java
+ * AUTHORS: Magdalena Sowder, Michelle Duan, Elizabeth Kysel
+ * COMMENTS: CS 230 Final Project What Should I Eat?
+ * DATE: Dec 9 2015
+ */
+
+public class Recipe {
+  
+  // instance variables
+  private String title;
+  private String imageUrl;
+  private LinkedList<String> ingredients;
+  private int numIngredients;
+  private String directions;
+  
+  public Recipe
+}
