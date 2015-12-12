@@ -1,4 +1,5 @@
 /* IngredientsFrame.java
+ * 
  */
 
 import java.awt.*;
@@ -19,7 +20,7 @@ public class IngredientsFrame extends JPanel {
   //declare private objects 
   private JPanel buttonPanel, checkBoxPanel /*checkBoxLabelPanel, checkBoxPanel,contentPane*/;
   private JButton displayButton;
-  private RecipeCollection allIngredients; //presumes allIngredients is a collection of string objects
+  private RecipeCollection allRecipes; //presumes allIngredients is a collection of string objects
   private JCheckBox[] checkBox;
   String[] available;
   
@@ -30,7 +31,7 @@ public class IngredientsFrame extends JPanel {
     frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
     
-    this.allIngredients = r;
+    this.allRecipes = r;
     // sets the layout of the panel to vertical box layout
     setLayout(new BoxLayout (this, BoxLayout.Y_AXIS));
     //setPreferredSize(new Dimension(400,400));
@@ -49,11 +50,11 @@ public class IngredientsFrame extends JPanel {
     // creates new subpanel within the main ingredientsframe panel
     checkBoxPanel = new JPanel();
     checkBoxPanel.setLayout(new GridLayout(0, 4, 5, 5));
-    checkBox = new JCheckBox[allIngredients.size];
+    checkBox = new JCheckBox[allRecipes.size];
     checkBoxPanel = new JPanel();
 
-    for (int i = 0; i < allIngredients.size(); i++) {
-      checkBox[i] = new JCheckBox(allIngredients.get(i));
+    for (int i = 0; i < allRecipes.size(); i++) {
+      checkBox[i] = new JCheckBox(allRecipes.get(i));
       checkBoxPanel.add(checkBox[i]);
     }
     contentPane.add(checkBoxPanel, BorderLayout.CENTER);
@@ -126,7 +127,7 @@ public class IngredientsFrame extends JPanel {
         available = new String[count];
         for (int i=0; i<checkBox.length; i++){
           if (checkBox[i].isSelected()){
-            available[i]=allIngredients.get(i);
+            available[i]=allRecipes.get(i);
           }
         }
 

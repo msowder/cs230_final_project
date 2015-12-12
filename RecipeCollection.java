@@ -11,17 +11,20 @@ public class RecipeCollection{
   
   //INSTANCE VARIABLES
   private PriorityQueue collection;
+  private int size;
   
   //METHODS
   //constructors
   public RecipeCollection(){
     collection = new PriorityQueue();
+    size = 0;
   }
   
   public RecipeCollection(String fileName){
     //read from file
     try {
       Scanner scan = new Scanner(new File(fileName));
+      size = 0;
      
       //read recipes
       while (scan.hasNext()) {
@@ -49,7 +52,13 @@ public class RecipeCollection{
   
   public void addRecipe(String recipeName, LinkedList<String> ingredients, String imageUrl, String directions){
     Recipe newRecipe = new Recipe(recipeName, imageUrl, ingredients, directions);
-//    collection.add(newRecipe); 
+    collection.enqueue(newRecipe); 
+    size += 1;
+  }
+  
+  public void addRecipe(Recipe toBeAdded){
+    collection.enqueue(toBeAdded);
+    size += 1;
   }
   
   private LinkedList<String> createIngredients(String firstIngredients) {
@@ -60,6 +69,21 @@ public class RecipeCollection{
     }
     System.out.println("NEWLIST " + newList);
     return newList;
+  }
+  
+  public int size(){
+    return size;
+  }
+  
+  public Recipe peek(){
+    result = collection.dequeue();
+    collection.enqueue(result);
+    return result;
+  }
+  
+    
+  public Recipe remove(){
+    return collection.dequeue();
   }
   
   //main method for testing
