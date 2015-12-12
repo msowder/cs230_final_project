@@ -1,11 +1,7 @@
-/* Michelle Duan and Brookefieldman
+/* 
  * CS 230, Fall 2015
- * Assignment 3
- * Task 3: GradSchoolGUI.java 
- * Purpose: Sets up the frame and panel that contain the other panels
- * It communicates with the GradSchools.java class where the 
- * ability to rate and rank the schools porperly
- * resides.
+ *
+ * 
  */
 
 
@@ -14,7 +10,7 @@ import javax.swing.*;
 
 public class RecipeGUI {
  //declare private objects 
- private static RecipeCollection allIngredients;
+ private static RecipeCollection allRecipes;
  
   
  // Main method that creates and displays the main program frame conatianing a tabbed paneRecipe
@@ -28,7 +24,7 @@ public class RecipeGUI {
    
   // creates a tabbed pane, the panel on each Tab demonstrates separate functions that are connected
   JTabbedPane tp = new JTabbedPane(); 
-  tp.addTab ("Ingredients", new IngredientsFrame(allIngredients)); // allIngredients is a linkedlist of all the ingredients 
+  tp.addTab ("Ingredients", new IngredientsFrame(allRecipes)); // allIngredients is a linkedlist of all the ingredients 
   tp.addTab ("Display Recipes", new DisplayRecipesFrame(recipes)); // recipes is a 
 
   frame.getContentPane().add(tp);// gets content pane of the frame and abbs the tabbed pane to the frame
