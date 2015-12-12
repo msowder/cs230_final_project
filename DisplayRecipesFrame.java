@@ -18,8 +18,8 @@ import javax.swing.JPanel;
 public class DisplayRecipesFrame extends JPanel {
   //declare private objects 
   private JPanel resultLabelPanel, resultPanel /*checkBoxLabelPanel, checkBoxPanel,contentPane*/;
-  private JLabel;
-  private RecipeCollection<Recipes> collection;
+  private JLabel resultLabel;
+  private RecipeCollection collection;
   int numRecipes; //to be instantiated later on using collection (how many recipes will display)
   
   // Constructor
@@ -49,13 +49,14 @@ public class DisplayRecipesFrame extends JPanel {
     resultPanel = new JPanel();
     //adds these recipe titles 
     for (int i=0; i < numRecipes; i++) {
-      resultPanel.add(collection.peek());
-      collection.remove(collection.peek());
+      Recipe recipe = collection.peek();
+      //resultPanel.add(recipe.toString());
+      collection.remove();
     }
     
     
     
-    adds all the subpanels to the IngredientsFrame  and sets their perspective positions within the panel
+    //adds all the subpanels to the IngredientsFrame  and sets their perspective positions within the panel
     add(resultLabelPanel, BorderLayout.NORTH);
     add(resultPanel, BorderLayout.SOUTH);
     
@@ -67,3 +68,4 @@ public class DisplayRecipesFrame extends JPanel {
   // received will be used during the event of the displayButton being pushed
   // --------------------------------------------------
  }
+
