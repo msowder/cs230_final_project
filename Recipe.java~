@@ -8,7 +8,7 @@
 
 import java.util.*;
 
-public class Recipe {
+public class Recipe implements Comparable<Recipe>{
   
   // Instance variables
   private String title;
@@ -53,6 +53,14 @@ public class Recipe {
   public String getDirections () {
     return directions;
   }
+  
+   public int compareTo(Recipe other) {
+     // 1 = left > right
+     // 0 = equal to
+     // -1 = left < right
+    return 0; //countIngredients(ingredients).compareTo(other.countIngredients(ingredients));
+  }
+  
   
   public static void main(String[] args) {
     

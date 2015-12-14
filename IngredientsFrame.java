@@ -1,5 +1,7 @@
-/* IngredientsFrame.java
- * 
+/* FILENAME: IngredientsFrame.java
+ * AUTHORS: Magdalena Sowder, Michelle Duan, Elizabeth Kysel
+ * COMMENTS: CS 230 Final Project What Should I Eat?
+ * DATE: Dec 9 2015
  */
 
 import java.awt.*;

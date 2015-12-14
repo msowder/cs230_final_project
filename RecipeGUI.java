@@ -1,7 +1,7 @@
-/* 
- * CS 230, Fall 2015
- *
- * 
+/* FILENAME: RecipeGUI.java
+ * AUTHORS: Magdalena Sowder, Michelle Duan, Elizabeth Kysel
+ * COMMENTS: CS 230 Final Project What Should I Eat?
+ * DATE: Dec 9 2015
  */
 
 
@@ -22,8 +22,8 @@ public class RecipeGUI {
     
     // creates a tabbed pane, the panel on each Tab demonstrates separate functions that are connected
     JTabbedPane tp = new JTabbedPane(); 
-    tp.addTab ("Ingredients", new IngredientsFrame(allRecipes)); // allIngredients is a linkedlist of all the ingredients 
-    //tp.addTab ("Display Recipes", new DisplayRecipesFrame(recipes)); // recipes is a 
+//    tp.addTab ("Ingredients", new IngredientsFrame(recipes)); // allIngredients is a linkedlist of all the ingredients 
+    tp.addTab ("Display Recipes", new DisplayRecipesFrame(recipes)); // recipes is a 
     
     frame.getContentPane().add(tp);// gets content pane of the frame and abbs the tabbed pane to the frame
     frame.pack(); // sets the size of the frame to appropriately contain the panel within

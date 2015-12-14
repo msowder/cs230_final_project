@@ -50,13 +50,13 @@ public class IngredientsFrame extends JPanel {
     // creates new subpanel within the main ingredientsframe panel
     checkBoxPanel = new JPanel();
     checkBoxPanel.setLayout(new GridLayout(0, 4, 5, 5));
-//    checkBox = new JCheckBox[allRecipes.size];
+    //checkBox = new JCheckBox[allRecipes.size];
     checkBoxPanel = new JPanel();
 
-    for (int i = 0; i < allRecipes.size(); i++) {
-//      checkBox[i] = new JCheckBox(allRecipes.get(i));
-      checkBoxPanel.add(checkBox[i]);
-    }
+    //for (int i = 0; i < allRecipes.size(); i++) {
+      //checkBox[i] = new JCheckBox(allRecipes.get(i));
+      //checkBoxPanel.add(checkBox[i]);
+    //}
     contentPane.add(checkBoxPanel, BorderLayout.CENTER);
     
    
@@ -127,7 +127,7 @@ public class IngredientsFrame extends JPanel {
         available = new String[count];
         for (int i=0; i<checkBox.length; i++){
           if (checkBox[i].isSelected()){
-//            available[i]=allRecipes.get(i);
+            //available[i]=allRecipes.get(i);
           }
         }
 

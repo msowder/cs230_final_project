@@ -1,8 +1,9 @@
-// ***************************************************************
-//   RecipeCollection.java         
-//
-//   
-// ***************************************************************
+/* FILENAME: RecipeCollection.java
+ * AUTHORS: Magdalena Sowder, Michelle Duan, Elizabeth Kysel
+ * COMMENTS: CS 230 Final Project What Should I Eat?
+ * DATE: Dec 9 2015
+ */
+
 import javafoundations.PriorityQueue;
 import java.io.*;
 import java.util.*;
@@ -24,15 +25,12 @@ public class RecipeCollection{
     //read from file
     try {
       Scanner scan = new Scanner(new File(fileName));
-      size = 0;
      
-      //read recipes
+      //read recipes from txt file
       while (scan.hasNext()) {
         scan.nextLine();
         String recipeName= scan.nextLine();
-        System.out.println("NAME " + recipeName);
         String ingredients = scan.nextLine();
-        System.out.println("INGREDIENTS " + ingredients);
         LinkedList<String> ingredientList= createIngredients(ingredients);
         String imageURL = scan.nextLine();
         scan.nextLine();
@@ -41,7 +39,6 @@ public class RecipeCollection{
           directions += scan.nextLine();
           directions += "\n";
         }
-        System.out.println("DIRECTIONS" + directions);
         addRecipe(recipeName, ingredientList, imageURL, directions);
       }
     } catch (IOException ex){
@@ -49,15 +46,14 @@ public class RecipeCollection{
     }
   }
   
-  
   public void addRecipe(String recipeName, LinkedList<String> ingredients, String imageUrl, String directions){
     Recipe newRecipe = new Recipe(recipeName, imageUrl, ingredients, directions);
-    collection.enqueue(newRecipe); 
+//    collection.enqueue(newRecipe); 
     size += 1;
   }
   
   public void addRecipe(Recipe toBeAdded){
-    collection.enqueue(toBeAdded);
+//    collection.enqueue(toBeAdded);
     size += 1;
   }
   
@@ -67,7 +63,6 @@ public class RecipeCollection{
     for (int i = 0; i < split.length; i++) {
       newList.add(split[i]);
     }
-    System.out.println("NEWLIST " + newList);
     return newList;
   }
   
@@ -76,14 +71,15 @@ public class RecipeCollection{
   }
   
   public Recipe peek(){
-    result = collection.dequeue();
-    collection.enqueue(result);
-    return result;
+//    result = collection.dequeue();
+//    collection.enqueue(result);
+//    return result;
+    return null;
   }
   
-    
   public Recipe remove(){
-    return collection.dequeue();
+//    return collection.dequeue();
+    return null;
   }
   
   //main method for testing

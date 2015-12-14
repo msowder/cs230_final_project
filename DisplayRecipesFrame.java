@@ -1,22 +1,18 @@
-///* IngredientsFrame.java
-// */
-//
-//import java.awt.*;
-//import java.awt.event.*;
-//import javax.swing.event.*;
-//import javax.swing.*;
-//import java.awt.BorderLayout;
-//import java.awt.GridLayout;
-//import javax.swing.BorderFactory;
-//import javax.swing.BorderFactory;
-//import javax.swing.JButton;
-//import javax.swing.JCheckBox;
-//import javax.swing.JFrame;
-//import javax.swing.JPanel;
-// 
-// 
-//public class DisplayRecipesFrame extends JPanel {
-//  //declare private objects 
+/* FILENAME: DisplayRecipesFrame.java
+ * AUTHORS: Magdalena Sowder, Michelle Duan, Elizabeth Kysel
+ * COMMENTS: CS 230 Final Project What Should I Eat?
+ * DATE: Dec 9 2015
+ */
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.Image;
+import java.io.IOException;
+import java.net.URL;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+
 //  private JPanel resultLabelPanel, resultPanel /*checkBoxLabelPanel, checkBoxPanel,contentPane*/;
 //  private JLabel resultLabel;
 //  private RecipeCollection collection;
@@ -32,7 +28,6 @@
 //    //setPreferredSize(new Dimension(400,400));
 //    
 //    //***initialize numRecipes;
-//    
 //    
 //    //gets size of priority queue
 //    int size = collection.size();
@@ -70,44 +65,35 @@
 // }
 //
 
-/*Anne Schwartz and MAgdalena Sowder
- * PSET 5
- * AboutPanel.java
- */
 
-//creates a panel with information about how to use this application 
-
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
 
 public class DisplayRecipesFrame extends JPanel {
-  private JLabel text, title, pumpkin; //instance variables for JLabels
+  private JLabel text, pumpkin; //instance variables for JLabels
   private RecipeCollection recipes;
   
   public DisplayRecipesFrame(RecipeCollection recipes) {
-    //makes a JLabel with an HTML div and adds text to it and centers the text
-    title = new JLabel("<html><div style=\"text-align: center;\">Choose the Best Graduate School<br>for YOU!</html>", SwingConstants.CENTER);
     
     //makes a new JLabel with an HTML div and adds text to it with line breaks
-    text = new JLabel("<html><div style=\"text-align: center;\">This program was created by Magdalena Sowder and Anne Schwartz. <br>This program can help you find a good grad"
-                        + " school for you. <br>In the Add Panel of this application you can rate the schools you are interested"
-                        + " in and add them to a list of schools. <br>In the Evaluate Panel, you can rank the importance you place on" 
-                        + " the quality of <br>academics, research, and publications of your preferred school. <br>With this information the application will"
-                        + " display the school that is best for you!</html>");
+    text = new JLabel("You can make 5 recipes");
     
-    //sets the font type and size and color of the JLabels
-    title.setFont(new Font("Courier", Font.PLAIN, 36));
-    title.setForeground(Color.red);
-    
-    text.setFont(new Font("Times", Font.PLAIN, 18));
+    text.setFont(new Font("Times", Font.PLAIN, 24));
     text.setForeground(Color.blue);
     
-    //adds an image to the panel
-    add(new JLabel(new ImageIcon("pumpkin.png")));
+    Image image = null;
+    try {
+      URL url = new URL("http://www.mkyong.com/image/mypic.jpg");
+      image = ImageIO.read(url);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    
+    JLabel label = new JLabel(new ImageIcon(image));
+    add(label);
 
+    //adds an image to the panel
+//    add(new JLabel(new ImageIcon("pumpkin.png")));
+    
     //adds the labels to the panel 
-    add(title);
     add(text);
     //sets the size and background color of the panel
     setPreferredSize(new Dimension(850, 300));
